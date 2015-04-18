@@ -1,4 +1,4 @@
-# stockvelFuneral
+# Stockvel Funerals
 
 ###Introduction##
 
