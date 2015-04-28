@@ -6,20 +6,42 @@
 
 package Domain;
 
+import javax.persistence.Embeddable;
+
 /**
  *
  * @author sbm
  */
-public interface MemberIdentity {
-    public String id;
+@Embeddable
+public class MemberIdentity {
+    public Long Id;
     private String IdType;
     
     private MemberIdentity (Builder build){
-        this id = build.id;
+        this.Id = build.Id;
         this.IdType = build.IdType;
-        
-        public static class Builder {
-        
     }
+        public static class Builder {
+        private String IdType;
+        private Long Id;
+           
+        public Builder (Long Id){
+         this.Id=Id;
+     }
+       public Builder IdType(String value){
+            this.IdType = value;
+            return this;
+        }  
+        public Builder copy(MemberIdentity value){
+            this.Id=value.Id;
+            this.IdType=value.IdType;
+            return this;
+        }
+
+        public MemberIdentity build(){
+            return new MemberIdentity(this);
+        }
+    }
+        
     
 }

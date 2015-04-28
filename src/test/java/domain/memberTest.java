@@ -1,10 +1,16 @@
+package domain;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-import Domain.member;
+
+
+import Domain.Member;
+import org.aspectj.lang.annotation.Before;
+import org.junit.Test;
 import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterMethod;
@@ -29,7 +35,7 @@ public class memberTest {
     }
      @Test
      public void Testmember()throws Exception {
-        member Member = new member.Builder (101).numberOfDependants(2).Build();
+        Member Member = new Member.Builder (101).numberOfDependants(2).Build();
         Assert.AssertEquals(2,Member.getNumberOfDependants());
     }
 

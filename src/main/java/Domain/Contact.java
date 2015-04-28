@@ -81,5 +81,6 @@ public class Contact implements Serializable{
             this.email=value.email;
             return this;
         }
+        
     }
 }
