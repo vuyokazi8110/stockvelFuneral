@@ -11,3 +11,5 @@ The member will have a variety of insurance to choose from, then once the member
 
 ###Domain Model###
 Stockvel Funerals.
+
+![stockveluml](https://cloud.githubusercontent.com/assets/6651830/7216339/219a6aa2-e5fc-11e4-9197-0e011752a57c.PNG)
