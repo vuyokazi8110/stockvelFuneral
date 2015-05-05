@@ -8,7 +8,7 @@ package za.cput.wondo.domain;
 
 
 
-import Domain.Member;
+import za.cput.wondo.domain.Member;
 import org.aspectj.lang.annotation.Before;
 import org.junit.Test;
 import org.testng.Assert;

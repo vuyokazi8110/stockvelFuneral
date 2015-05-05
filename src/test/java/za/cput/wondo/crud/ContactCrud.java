@@ -35,13 +35,13 @@ public class ContactCrud {
         Assert.assertNotNull(contact.getEmail());
     }
 
-    @Test
+    @Test(dependsOnMethods = "create")
     public void testRead() throws Exception {
         Contact contact = repository.findOne(email);
         Assert.assertEquals(0215214200,contact.getHomeNumber());
     }
 
-    @Test
+    @Test(dependsOnMethods = "read")
     public void testUpdate() throws Exception {
 
         Contact contact = repository.findOne(email);
@@ -49,16 +49,16 @@ public class ContactCrud {
                 .homeNumber(0215214211).cellNumber(0724567832).build();
         repository.save(newContact);
         Assert.assertEquals(0215214211, contact.getHomeNumber());
-        Assert.assertEquals(2014, course.getOffering());
+        Assert.assertEquals(2014, contact.getEmail());
 
     }
 
-    @Test
+    @Test(dependsOnMethods = "update")
     public void testDelete() throws Exception {
         Contact contact = repository.findOne(email);
         repository.delete(contact);
-        Contact newcontact = repository.findOne(email);
-        Assert.assertNull(newcontact);
+        Contact deletedcontact = repository.findOne(email);
+        Assert.assertNull(deletedcontact);
 
 
     }
