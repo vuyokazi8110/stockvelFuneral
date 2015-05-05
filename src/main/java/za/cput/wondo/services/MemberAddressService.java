@@ -4,15 +4,12 @@
  * and open the template in the editor.
  */
 
-package za.cput.wondo.Repository;
-
-import org.springframework.data.repository.CrudRepository;
+package za.cput.wondo.services;
 
 /**
  *
  * @author sbm
  */
-public interface MemberIdentityRepository extends CrudRepository<MemberIdentity,Long> {
-    
+public interface MemberAddressService {
     
 }

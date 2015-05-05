@@ -4,12 +4,15 @@
  * and open the template in the editor.
  */
 
-package za.cput.wondo.Services;
+package za.cput.wondo.services;
+
+import com.mycompany.domain.Benneficiaries;
+import java.util.List;
 
 /**
  *
  * @author sbm
  */
-public interface MemberService {
-     List<Members> getMembers();
+public interface BenneficiariesService {
+    List<Benneficiaries> getBenneficiaries();
 }

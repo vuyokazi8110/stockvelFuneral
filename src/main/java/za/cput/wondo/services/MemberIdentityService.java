@@ -4,15 +4,12 @@
  * and open the template in the editor.
  */
 
-package za.cput.wondo.Repository;
-
-import Domain.MemberName;
+package za.cput.wondo.services;
 
 /**
  *
  * @author sbm
  */
-public interface MemberNameRepository extends CrudRepository<MemberName,Long>{
-
+public interface MemberIdentityService {
     
 }
