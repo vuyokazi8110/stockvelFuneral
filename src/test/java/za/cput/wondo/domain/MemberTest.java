@@ -1,4 +1,4 @@
-package domain;
+package za.cput.wondo.domain;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,7 +20,7 @@ import org.testng.annotations.BeforeMethod;
  *
  * @author sbm
  */
-public class memberTest {
+public class MemberTest {
     
    
 

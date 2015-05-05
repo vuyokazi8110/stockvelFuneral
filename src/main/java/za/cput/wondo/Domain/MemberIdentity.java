@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package Domain;
+package za.cput.wondo.Domain;
 
 import javax.persistence.Embeddable;
 

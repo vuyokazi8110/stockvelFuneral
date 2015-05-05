@@ -1,4 +1,4 @@
-package Domain;
+package za.cput.wondo.Domain;
 
 import java.io.Serializable;
 import java.util.List;

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package Repository;
+package za.cput.wondo.Repository;
 
 import org.springframework.data.repository.CrudRepository;
 
