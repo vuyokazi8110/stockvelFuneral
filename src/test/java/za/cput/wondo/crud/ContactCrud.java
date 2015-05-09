@@ -6,15 +6,17 @@
 
 package za.cput.wondo.crud;
 
-import za.cput.wondo.domain.Contact;
-import za.cput.wondo.repository.ContactRepository;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import za.cput.wondo.domain.Contact;
+import za.cput.wondo.repository.ContactRepository;
 
 /**
  *
@@ -28,8 +30,13 @@ public class ContactCrud {
     private String email;
     @Test
     public void testCreate() throws Exception {
-        Contact contact = new Contact.Builder("vwondo@fnb.co.za")
-                .homeNumber(0215214200).cellNumber(0839750752).build();
+        Map<String,String> values = new HashMap<String,String>();
+        values.put("email","vuyokaziwondo@yahoo.com");
+        values.put("homeNumber", 0219453580);
+        values.put("cellNumber",0839750752 )
+        Contact contact = ContactFactory
+                .createContact(values,27);
+
         repository.save(contact);
         email=contact.getEmail();
         Assert.assertNotNull(contact.getEmail());
@@ -38,18 +45,25 @@ public class ContactCrud {
     @Test(dependsOnMethods = "create")
     public void testRead() throws Exception {
         Contact contact = repository.findOne(email);
-        Assert.assertEquals(0215214200,contact.getHomeNumber());
+        repository.save(contact);
+        Assert.assertNotNull(contact);
+       
     }
 
     @Test(dependsOnMethods = "read")
     public void testUpdate() throws Exception {
 
         Contact contact = repository.findOne(email);
-        Contact newcontact = new Contact.Builder("vuyo@yahoo.com").email(contact.getEmail())
-                .homeNumber(0215214211).cellNumber(0724567832).build();
+        Contact newContact = new Contact
+                .Builder(contact.getEmail())
+                .copy(contact)
+                .homeNumber(0215214200)
+                .build();
+        
         repository.save(newContact);
+        Contact updatedContact = repository.findOne(id);
         Assert.assertEquals(0215214211, contact.getHomeNumber());
-        Assert.assertEquals(2014, contact.getEmail());
+        Assert.assertEquals(updatedContact.getHomeNumber(),0215214200);
 
     }
 
@@ -59,7 +73,5 @@ public class ContactCrud {
         repository.delete(contact);
         Contact deletedcontact = repository.findOne(email);
         Assert.assertNull(deletedcontact);
-
-
     }
 }

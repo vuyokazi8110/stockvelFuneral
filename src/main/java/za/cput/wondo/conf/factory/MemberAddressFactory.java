@@ -10,6 +10,16 @@ package za.cput.wondo.conf.factory;
  *
  * @author sbm
  */
-public class MemberAddressFactory {
+public class MemberAddressFactory {   
     
+    private static MemberAddressFactory memberAddress;
+    public static MemberAddress createMemberAddress(int dependantId, int dependantCode
+                        Map<> values){                       
+        MemberAddress memberAddress = new MemberAddress
+                .Builder(values.get("dependantId"))
+                .dependantCode(values.get("dependantCode"))
+                .Build();
+        return MemberAddress;
+    }
 }
+

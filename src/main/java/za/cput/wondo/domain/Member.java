@@ -26,9 +26,11 @@ public class Member implements Serializable {
     private MemberAddress adr;
     @Embedded
     private Contact cont;
+    private MemberName mName;
     @OneToMany(cascade = CascadeType.ALL)
    // @JointColumn(name= "member_id")???
     private List<Dependants> dependants;
+    private List<Policies> policies;
   
     private Member() {
     }
@@ -43,6 +45,9 @@ public class Member implements Serializable {
         private Long id;
         private int numberOfDependants;
         private MemberAddress adr;
+        private MemberName mName;
+        private Contact cont;
+        private Policies policies;
 
         public Builder(Long id) {
             this.id = id;
@@ -52,14 +57,22 @@ public class Member implements Serializable {
             this.numberOfDependants = value;
             return this;
         }
-        /*public Builder cont(Contact cont)
+        public Builder cont(Contact cont)
          {
          this.cont = cont;
          return this;
-         }*/
+         }
 
         public Builder adr(MemberAddress adr) {
             this.adr = adr;
+            return this;
+        }
+        public Builder policies(Policies policies){
+            this.policies = policies;
+            return this;
+        }
+         public Builder mName(MemberName mName) {
+            this.mName = mName;
             return this;
         }
 

@@ -6,7 +6,7 @@
 
 package za.cput.wondo.conf.factory;
 
-import com.mycompany.domain.Dependants;
+import za.cput.wondo.domain.Dependants;
 import java.util.Map;
 import static javax.persistence.CascadeType.values;
 
