@@ -6,7 +6,7 @@
 
 package za.cput.wondo.services;
 
-import com.mycompany.domain.Claims;
+import za.cput.wondo.domain.Claims;
 import java.util.List;
 
 /**

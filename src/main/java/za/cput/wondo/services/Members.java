@@ -6,13 +6,10 @@
 
 package za.cput.wondo.services;
 
-import com.mycompany.domain.Member;
-import java.util.List;
-
 /**
  *
  * @author sbm
  */
-public interface MemberService_1 {
-     List<Member> getMembers();
+class Members {
+    
 }

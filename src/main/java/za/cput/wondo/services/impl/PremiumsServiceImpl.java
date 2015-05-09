@@ -6,7 +6,7 @@
 
 package za.cput.wondo.services.impl;
 
-import com.mycompany.services.PremiumService;
+import za.cput.wondo.services.PremiumService;
 
 /**
  *

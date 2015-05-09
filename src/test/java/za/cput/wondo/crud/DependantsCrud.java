@@ -21,7 +21,8 @@ import za.cput.wondo.repository.DependantsRepository;
  *
  * @author sbm
  */
-public class DependantsCrud { private Long id;
+public class DependantsCrud extends AbstractTestNGSpringContextTests { 
+    private Long id;
 
     @Autowired
    DependantsRepository repository;

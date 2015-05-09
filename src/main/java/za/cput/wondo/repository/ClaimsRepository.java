@@ -14,5 +14,7 @@ import org.springframework.data.repository.CrudRepository;
  * @author sbm
  */
 public interface ClaimsRepository extends CrudRepository<Claims,Long>{
+
+    public ClaimsRepository findOne(int memberNo);
     
 }

@@ -6,7 +6,7 @@
 
 package za.cput.wondo.services;
 
-import com.mycompany.domain.Policies;
+import za.cput.wondo.domain.Policies;
 import java.util.List;
 
 /**

@@ -6,8 +6,8 @@
 
 package za.cput.wondo.services.impl;
 
-import com.mycompany.domain.Benneficiaries;
-import com.mycompany.repository.BenneficiariesRepository;
+import za.cput.wondo.domain.Benneficiaries;
+import za.cput.wondo.repository.BenneficiariesRepository;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;

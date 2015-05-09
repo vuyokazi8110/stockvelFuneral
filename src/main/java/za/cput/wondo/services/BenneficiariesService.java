@@ -6,7 +6,7 @@
 
 package za.cput.wondo.services;
 
-import com.mycompany.domain.Benneficiaries;
+import za.cput.wondo.domain.Benneficiaries;
 import java.util.List;
 
 /**
