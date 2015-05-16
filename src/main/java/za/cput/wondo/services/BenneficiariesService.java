@@ -6,8 +6,9 @@
 
 package za.cput.wondo.services;
 
-import za.cput.wondo.domain.Benneficiaries;
 import java.util.List;
+import za.cput.wondo.domain.Benneficiaries;
+import za.cput.wondo.domain.Policies;
 
 /**
  *
@@ -15,5 +16,5 @@ import java.util.List;
  */
 public interface BenneficiariesService {
     List<Benneficiaries> getBenneficiaries();
-    List<policies> getPolicies();
+    List<Policies> getPolicies();
 }
