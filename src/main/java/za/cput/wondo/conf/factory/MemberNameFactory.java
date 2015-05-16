@@ -6,7 +6,7 @@
 
 package za.cput.wondo.conf.factory;
 
-import com.mycompany.domain.MemberName;
+import za.cput.wondo.domain.MemberName;
 import java.util.Map;
 
 /**

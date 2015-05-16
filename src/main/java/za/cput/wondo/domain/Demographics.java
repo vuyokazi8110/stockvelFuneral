@@ -11,16 +11,16 @@ package za.cput.wondo.domain;
  * @author sbm
  */
 public class Demographics {
-    public String Gender;
-    public String  Race;
+    public String gender;
+    public String  race;
     
     private Demographics (Builder build){
-        this.Gender = build.Gender;
-        this.Race = build.Race;
+        this.gender = build.gender;
+        this.race = build.race;
     }
     public static class Builder{
-        public String Gender;
-        public String  Race;
+        public String gender;
+        public String  race;
 
         public Builder(String get) {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -29,21 +29,21 @@ public class Demographics {
     
         public Builder Gender(String value)
         {
-            this.Gender = value;
+            this.gender = value;
            return this;
         
         }
          public String getGender() {
-            return Gender;
+            return gender;
         }
 
         public String getRace() {
-            return Race;
+            return race;
         }
         
         public Builder copy(Demographics value){
-            this.Gender=value.Gender;
-            this.Race=value.Race;
+            this.gender=value.gender;
+            this.race=value.race;
             return this;
         }
         

@@ -1,13 +1,14 @@
 package za.cput.wondo.domain;
 
+import static com.fasterxml.classmate.AnnotationOverrides.builder;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.OneToMany;
 import org.springframework.data.annotation.Id;
 
 /**
@@ -22,6 +23,7 @@ public class Member implements Serializable {
     @javax.persistence.Id
     private Long id;
     private int numberOfDependants;
+    private int code;
     @Embedded
     private MemberAddress adr;
     @Embedded
@@ -38,6 +40,7 @@ public class Member implements Serializable {
     public Member(Builder build) {
         this.id = build.id;
         this.numberOfDependants = build.numberOfDependants;
+        this.code = build.code;
     }
 
     public static class Builder {
@@ -48,6 +51,7 @@ public class Member implements Serializable {
         private MemberName mName;
         private Contact cont;
         private Policies policies;
+        private int code;
 
         public Builder(Long id) {
             this.id = id;
@@ -75,6 +79,12 @@ public class Member implements Serializable {
             this.mName = mName;
             return this;
         }
+         }
+         public Builder code(int code) {
+            this.code = code;
+            return this;
+        }
+         
 
         public Builder copy(Member value) {
             this.id = value.id;
@@ -86,21 +96,5 @@ public class Member implements Serializable {
             return new Member(this);
         }
     }
-
-    public Long getMemberNumber() {
-        return id;
-    }
-
-    public int getNumberOfDependants() {
-        return numberOfDependants;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
 }
+ 

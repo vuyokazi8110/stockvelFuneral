@@ -6,6 +6,8 @@
 
 package za.cput.wondo.conf.factory;
 
+import za.cput.wondo.domain.MemberAddress;
+
 /**
  *
  * @author sbm

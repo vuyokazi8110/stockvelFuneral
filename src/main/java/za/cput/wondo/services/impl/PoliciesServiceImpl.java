@@ -6,10 +6,27 @@
 
 package za.cput.wondo.services.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import za.cput.wondo.domain.Policies;
+import za.cput.wondo.repository.PoliciesRepository;
+
 /**
  *
  * @author sbm
  */
-public class PoliciesServiceImpl {
+public class PoliciesServiceImpl implements PoliciesService{
+    @Autowired
+    PoliciesRepository repository;
+    public List<Policies> getPolicies() {
+        List<Policies> allpolicies = new ArrayList<Policies>();
+
+        Iterable<Policies> policies = repository.findAll();
+        for (Policies policy : policies) {
+            allpolicies.add(policy);
+        }
+        return allpolicies;
+    }
     
 }

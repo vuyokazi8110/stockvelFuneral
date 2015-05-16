@@ -6,9 +6,10 @@
 
 package za.cput.wondo.conf.factory;
 
-import com.mycompany.domain.MemberIdentity;
 import java.util.Map;
+import static javax.persistence.CascadeType.values;
 import static javax.persistence.EnumType.values;
+import za.cput.wondo.domain.MemberIdentity;
 
 /**
  *

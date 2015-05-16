@@ -19,43 +19,37 @@ public class Dependants {
     @Id
      private int dependantId;
      private int dependantCode;
+     private String name;
     @Embedded
     private Contact cont;
     //@OnetoMany
-    //JointColumn(name= "dep_id");    
+    //JointColumn(name= "dep_id");  
     
-       
     private Dependants(Builder build) {
     this.dependantId= build.dependantId;
     this.dependantCode = build.dependantCode;
+    this.name = build.name;
     }
      public static class Builder{
         
         private int dependantId;
-        private int dependantCode;
+        private String name;
         
          public Builder (int dependantId)
         {
             this.dependantId=dependantId;
         }
-         public Builder dependantCode(int value)
-        {
-            this.dependantCode = value;
+         
+         public Builder name(String value){
+            this.name = value;
             return this;
-        }
-
+         }
         public int getDependantId() {
             return dependantId;
         }
-
-        public int getDependantCode() {
-            return dependantCode;
-        }
-         
-        
+      
         public Builder copy(Dependants value){
             this.dependantId=value.dependantId;
-            this.dependantCode=value.dependantCode;
             return this;
         }
         public Dependants build()

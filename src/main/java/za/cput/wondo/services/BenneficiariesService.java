@@ -15,4 +15,5 @@ import java.util.List;
  */
 public interface BenneficiariesService {
     List<Benneficiaries> getBenneficiaries();
+    List<policies> getPolicies();
 }

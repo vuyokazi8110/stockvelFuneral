@@ -6,7 +6,7 @@
 
 package za.cput.wondo.conf.factory;
 
-import com.mycompany.domain.Policies;
+import za.cput.wondo.domain.Policies;
 import java.util.Map;
 import static javax.persistence.CascadeType.values;
 
@@ -16,7 +16,7 @@ import static javax.persistence.CascadeType.values;
  */
 public class PoliciesFactory {
     private static Policies policies;
-    public static Policies createPolicies(int policyNo
+    public static Policies createPolicies(int policyNo,
                         Map<String> values){                       
         Policies policies = new Policies
                 .Builder(values.get("policyNo"))

@@ -11,37 +11,31 @@ package za.cput.wondo.domain;
  * @author sbm
  */
 public class MemberAddress {
-    
-    private String physicalAddress;
-    private String postalAddress;
+    private String email;
+    //private String physicalAddress;
+    //private String postalAddress;
     private String postalCode;
     
     private MemberAddress (Builder build){
-        physicalAddress = build. physicalAddress;
-        postalAddress = build.postalAddress;
+        email = build. email;
         postalCode = build.postalCode;        
     }
     
     public static class Builder{
-        private String physicalAddress;
-        private String postalAddress;
+        private String email;
         private String postalCode;
     
 
     public String getPhysicalAddress() {
-        return physicalAddress;
+        return email;
     }
 
-    public String getPostalAddress() {
-        return postalAddress;
-    }
-
+    
     public String getPostalCode() {
         return postalCode;
     }
     public Builder copy(MemberAddress value) {
-            this.physicalAddress = value.physicalAddress;
-            this.postalAddress = value.postalAddress;
+            this.email = value.email;
             this.postalCode = value.postalCode;
             return this;
         }

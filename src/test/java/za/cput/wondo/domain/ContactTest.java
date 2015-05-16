@@ -8,7 +8,7 @@ package za.cput.wondo.domain;
 
 
 
-import com.mycompany.domain.Contact;
+import za.cput.wondo.domain.Contact;
 import junit.framework.Assert;
 import org.junit.After;
 import static org.junit.Assert.*;

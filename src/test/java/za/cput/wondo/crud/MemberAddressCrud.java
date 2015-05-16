@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-package za.cput.wondo.services;
+package za.cput.wondo.crud;
 
 /**
  *
  * @author sbm
  */
-class Members {
+public class MemberAddressCrud {
     
 }

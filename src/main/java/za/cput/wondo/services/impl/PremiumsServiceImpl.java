@@ -6,12 +6,27 @@
 
 package za.cput.wondo.services.impl;
 
-import za.cput.wondo.services.PremiumService;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import za.cput.wondo.domain.Premiums;
+import za.cput.wondo.repository.PremiumsRepository;
+import za.cput.wondo.services.PremiumsService;
 
 /**
  *
  * @author sbm
  */
-public class PremiumsServiceImpl implements PremiumService {
-    
+public class PremiumsServiceImpl implements PremiumsService{
+    @Autowired
+    PremiumsRepository repository;
+    public List<Premiums> getCourses() {
+        List<Premiums> allpremiums = new ArrayList<Premiums>();
+
+        Iterable<Premiums> premiums = repository.findAll();
+        for (Premiums premium : premiums) {
+            allpremiums.add(premium);
+        }
+        return allpremiums;
+    }
 }

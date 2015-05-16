@@ -4,16 +4,12 @@
  * and open the template in the editor.
  */
 
-package za.cput.wondo.services;
-
-import java.util.List;
-import za.cput.wondo.domain.Claims;
-import za.cput.wondo.domain.MemberName;
+package za.cput.wondo.domain;
 
 /**
  *
  * @author sbm
  */
-public interface MemberNameService {
-     List<MemberName> getMemberName();
+public class MembernameTest {
+    
 }

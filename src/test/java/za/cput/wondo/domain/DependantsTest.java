@@ -6,6 +6,8 @@ package za.cput.wondo.domain;
  * and open the template in the editor.
  */
 
+import org.junit.Test;
+import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -16,20 +18,25 @@ import org.testng.annotations.BeforeMethod;
  */
 public class DependantsTest {
     
-    public DependantsTest() {
+    @Test
+    public void testDependants() throws Exception {
+        Dependants dependants = DependantsFactory
+                .createDependants("1011","Mzukisi");
+        Assert.assertEquals("1011",dependants.getDependantId());
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    @Test
+    public void testUpdate() throws Exception {
+        Dependants dependants = new Dependants.Builder("1011")
+                .name("Mzukisi")
+                .build();
+        Dependants newdependants = new Dependants
+                .Builder(dependants.getDependantId())
+                .copy(dependants)
+                .name("Lona").build();
 
-    @BeforeMethod
-    public void setUpMethod() throws Exception {
-    }
-
-    @AfterMethod
-    public void tearDownMethod() throws Exception {
+        Assert.assertEquals("Lona",newdependants.getName());
+        Assert.assertEquals(1011,newdependants.getDependantId());
+        Assert.assertEquals(1011,dependants.getDependantId());
     }
 }

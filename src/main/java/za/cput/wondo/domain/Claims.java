@@ -12,27 +12,45 @@ package za.cput.wondo.domain;
  */
 public class Claims {
     private int memberNo;
-    private int policyNo;
+    private String policyNo;
+    private String name;
+    private double amount;
     
     private Claims(Builder build) {
         memberNo= build.memberNo;
         policyNo = build.policyNo;
-    
+        amount = build.amount;
+        name = build.name;
     }
+
+   
     public static class Builder{
         
         private int memberNo;
-        private int policyNo;
+        private String policyNo;
+        private String name;
+        private double amount;
        
         public Builder (int memberNo)
         {
             this.memberNo=memberNo;
         }
-         public Builder policyNo(int value)
+         public Builder policyNo(String value)
         {
             this.policyNo = value;
             return this;
         }
+          public Builder name(String value)
+        {
+            this.name = value;
+            return this;
+        }
+         public Builder amount(double value)
+        {
+            this.amount = value;
+            return this;
+        }
+         
          public Claims build()
         {
             return new Claims(this);
@@ -42,13 +60,14 @@ public class Claims {
             return memberNo;
         }
 
-        public int getPolicyNo() {
+        public String getPolicyNo() {
             return policyNo;
         }
          
          public Builder copy(Claims value){
             this.memberNo=value.memberNo;
             this.policyNo=value.policyNo;
+            this.name=value.policyNo;
             return null;        
          }
         
