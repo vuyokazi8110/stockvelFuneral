@@ -6,7 +6,7 @@
 
 package za.cput.wondo.conf.factory;
 
-import com.mycompany.domain.Contact;
+import za.cput.wondo.domain.Contact;
 import java.util.Map;
 
 /**

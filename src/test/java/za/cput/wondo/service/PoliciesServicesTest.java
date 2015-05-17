@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package za.cput.wondo.crud;
+package za.cput.wondo.service;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,8 +12,10 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.Assert;
+import static org.testng.Assert.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import za.cput.wondo.conf.factory.PoliciesFactory;
-import za.cput.wondo.domain.Claims;
 import za.cput.wondo.domain.Policies;
 import za.cput.wondo.repository.PoliciesRepository;
 
@@ -21,7 +23,8 @@ import za.cput.wondo.repository.PoliciesRepository;
  *
  * @author sbm
  */
-public class PoliciesCrud extends AbstractTestNGSpringContextTests{
+public class PoliciesServicesTest extends AbstractTestNGSpringContextTests{
+    
     private Long id;
     @Autowired
     private PoliciesRepository repository;
@@ -37,24 +40,5 @@ public class PoliciesCrud extends AbstractTestNGSpringContextTests{
         PolicyNo=policies.getPolicyNo();
         Assert.assertNotNull(policies);
     }
-    @Test(dependsOnMethods = "create")
-    public void read() throws Exception {
-        Policies policies = repository.findOne(id);
-        Assert.assertNotNull(policies);
-    }
 
-    @Test(dependsOnMethods = "read")
-    public void update() throws Exception {
-
-    }
-
-    @Test(dependsOnMethods = "update")
-    public void delete() throws Exception {
-        Policies policies = repository.findOne(id);
-        repository.delete(policies);
-        Policies deletedpolicies = repository.findOne(id);
-        Assert.assertNull(deletedpolicies);
-
-    }
-    
 }

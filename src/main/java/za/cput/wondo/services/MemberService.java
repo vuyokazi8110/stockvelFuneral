@@ -8,6 +8,7 @@ package za.cput.wondo.services;
 
 import java.util.List;
 import za.cput.wondo.domain.Dependants;
+import za.cput.wondo.domain.Member;
 import za.cput.wondo.domain.Policies;
 
 /**
@@ -15,7 +16,7 @@ import za.cput.wondo.domain.Policies;
  * @author sbm
  */
 public interface MemberService {
-     List<Members> getAllMembers();
+     List<Member> getAllMembers();
      List<Dependants> getDependants(Long id);
      List<Policies> getPolicies(Long id);
 }

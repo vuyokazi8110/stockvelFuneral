@@ -6,7 +6,7 @@
 
 package za.cput.wondo.conf.factory;
 
-import com.mycompany.domain.Demographics;
+import za.cput.wondo.domain.Demographics;
 import java.util.Map;
 
 /**
@@ -21,7 +21,7 @@ public class DemographicsFactory {
         Demographics demographics = new Demographics
                 .Builder(values.get("gender"))
                 .race(values.get("race"))
-                .build();
+                .Build();
         return demographics;
     }
 }

@@ -79,7 +79,7 @@ public class Member implements Serializable {
             this.mName = mName;
             return this;
         }
-         }
+         
          public Builder code(int code) {
             this.code = code;
             return this;

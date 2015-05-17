@@ -26,6 +26,7 @@ public class Dependants {
     //JointColumn(name= "dep_id");  
     
     private Dependants(Builder build) {
+        
     this.dependantId= build.dependantId;
     this.dependantCode = build.dependantCode;
     this.name = build.name;
