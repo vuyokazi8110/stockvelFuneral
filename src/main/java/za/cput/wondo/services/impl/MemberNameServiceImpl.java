@@ -23,7 +23,7 @@ public class MemberNameServiceImpl {
         List<MemberName> allmemberName = new ArrayList<MemberName>();
 
         Iterable<MemberName> memberName = repository.findAll();
-        for (MemberName name : MemberName) {
+        for (MemberName name : memberName) {
             allmemberName.add(name);
         }
         return allmemberName;

@@ -35,6 +35,8 @@ public class Dependants {
         
         private int dependantId;
         private String name;
+        private int dependantCode;
+
         
          public Builder (int dependantId)
         {

@@ -23,10 +23,11 @@ import za.cput.wondo.repository.PremiumsRepository;
 public class PremiumsServiceTest {
     
      private Long id;
+     private String premiumMonth;
     @Autowired
-    private PremiumsRepository repository;
+     private PremiumsRepository repository;
     @Test
-    public void create() throws Exception {
+     public void create() throws Exception {
         Premiums premiums = PremiumsFactory
                 .createPremiums("January", 100);
         repository.save(premiums);

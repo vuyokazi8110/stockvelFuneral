@@ -6,6 +6,8 @@
 
 package za.cput.wondo.service;
 
+import java.util.HashMap;
+import java.util.Map;
 import org.junit.Test;
 import org.testng.Assert;
 import static org.testng.Assert.*;

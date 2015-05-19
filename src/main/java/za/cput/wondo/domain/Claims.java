@@ -11,6 +11,7 @@ package za.cput.wondo.domain;
  * @author sbm
  */
 public class Claims {
+    private Long id;
     private int memberNo;
     private String policyNo;
     private String name;
@@ -21,11 +22,12 @@ public class Claims {
         policyNo = build.policyNo;
         amount = build.amount;
         name = build.name;
+        id = build.id;
     }
 
    
     public static class Builder{
-        
+        private Long id;
         private int memberNo;
         private String policyNo;
         private String name;
@@ -50,12 +52,30 @@ public class Claims {
             this.amount = value;
             return this;
         }
+        public Builder id(Long value)
+        {
+            this.id = value;
+            return this;
+        }
          
          public Claims build()
         {
             return new Claims(this);
         }
 
+        public Long getId() {
+            return id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public double getAmount() {
+            return amount;
+        }
+         
+         
         public int getMemberNo() {
             return memberNo;
         }
@@ -65,9 +85,11 @@ public class Claims {
         }
          
          public Builder copy(Claims value){
+             this.id = value.id;
             this.memberNo=value.memberNo;
             this.policyNo=value.policyNo;
             this.name=value.policyNo;
+            this.amount=value.amount;
             return null;        
          }
         
